@@ -40,6 +40,7 @@ class BullsAndCowsGUI:
         self.guesses = 0
         self.start_time = None
         self.game_ended = False
+        self.timer_id = None
 
         # Vytvoření widgetů
         self.create_widgets()
@@ -260,6 +261,10 @@ class BullsAndCowsGUI:
         if result == 'yes':
             self.start_game()
         else:
+            # Zrušit časovač před zavřením
+            if self.timer_id is not None:
+                self.root.after_cancel(self.timer_id)
+            self.root.quit()
             self.root.destroy()
 
     def update_timer(self):
@@ -267,7 +272,7 @@ class BullsAndCowsGUI:
         if not self.game_ended:
             elapsed = time.time() - self.start_time
             self.timer_label.config(text=f"Čas: {format_time(elapsed)}")
-            self.root.after(1000, self.update_timer)
+            self.timer_id = self.root.after(1000, self.update_timer)
 
 
 def play_bulls_and_cows_gui():
