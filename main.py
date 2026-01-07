@@ -25,9 +25,8 @@ def main():
         choice = input("\nZadej svou volbu (1-3): ").strip()
 
         if choice == "1":
-            print("\n[Bulls & Cows bude implementována]")
-            # from games.bulls_and_cows import play_bulls_and_cows
-            # play_bulls_and_cows()
+            from games.bulls_and_cows import play_bulls_and_cows
+            play_bulls_and_cows()
         elif choice == "2":
             print("\n[Tic-tac-toe bude implementována]")
             # from games.tic_tac_toe import play_tic_tac_toe
