@@ -7,6 +7,7 @@ discord: hatsukooo
 """
 
 from utils.timer import start_timer, stop_timer, format_time
+from utils.statistics import add_tic_tac_toe_result
 
 
 def display_welcome_and_rules():
@@ -221,6 +222,8 @@ def play_tic_tac_toe():
             print(f"Congratulations, the player {winner.lower()} WON!")
             print(f"Time: {format_time(elapsed_time)}")
             print("=" * 40)
+            # Uložit statistiky
+            add_tic_tac_toe_result(winner, elapsed_time)
             break
 
         # Kontrola remízy
@@ -231,6 +234,8 @@ def play_tic_tac_toe():
             print("It's a draw!")
             print(f"Time: {format_time(elapsed_time)}")
             print("=" * 40)
+            # Uložit statistiky
+            add_tic_tac_toe_result('draw', elapsed_time)
             break
 
         # Přepnout hráče

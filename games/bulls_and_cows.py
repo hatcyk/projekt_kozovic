@@ -8,6 +8,7 @@ discord: hatsukooo
 
 import random
 from utils.timer import start_timer, stop_timer, format_time
+from utils.statistics import add_bulls_cows_result
 
 
 def generate_secret_number():
@@ -196,6 +197,8 @@ def play_bulls_and_cows():
             print(f"That's {performance}")
             # Zobrazit čas
             print(f"Time: {format_time(elapsed_time)}")
+            # Uložit statistiky
+            add_bulls_cows_result(guesses, elapsed_time)
             break
 
         # Zobrazit výsledek

@@ -14,7 +14,8 @@ def display_menu():
     print("=" * 50)
     print("1. Bulls & Cows")
     print("2. Tic-tac-toe")
-    print("3. Konec")
+    print("3. Zobrazit statistiky")
+    print("4. Konec")
     print("=" * 50)
 
 
@@ -22,7 +23,7 @@ def main():
     """Hlavní funkce programu."""
     while True:
         display_menu()
-        choice = input("\nZadej svou volbu (1-3): ").strip()
+        choice = input("\nZadej svou volbu (1-4): ").strip()
 
         if choice == "1":
             from games.bulls_and_cows import play_bulls_and_cows
@@ -31,10 +32,13 @@ def main():
             from games.tic_tac_toe import play_tic_tac_toe
             play_tic_tac_toe()
         elif choice == "3":
+            from utils.statistics import display_statistics
+            display_statistics()
+        elif choice == "4":
             print("\nDěkuji za hru! Nashledanou!")
             break
         else:
-            print("\nNeplatná volba! Zadej číslo 1-3.")
+            print("\nNeplatná volba! Zadej číslo 1-4.")
 
 
 if __name__ == "__main__":
