@@ -19,6 +19,25 @@ def display_menu():
     print("=" * 50)
 
 
+def choose_interface():
+    """
+    Umožní výběr rozhraní.
+
+    Returns:
+        str: 'a' pro CLI, 'b' pro GUI, nebo None pro zrušení
+    """
+    print("\nVyber rozhraní:")
+    print("a) CLI (textové rozhraní)")
+    print("b) GUI (grafické rozhraní)")
+    choice = input("Volba (a/b): ").strip().lower()
+
+    if choice in ['a', 'b']:
+        return choice
+    else:
+        print("\nNeplatná volba!")
+        return None
+
+
 def main():
     """Hlavní funkce programu."""
     while True:
@@ -26,11 +45,24 @@ def main():
         choice = input("\nZadej svou volbu (1-4): ").strip()
 
         if choice == "1":
-            from games.bulls_and_cows import play_bulls_and_cows
-            play_bulls_and_cows()
+            # Bulls & Cows - výběr rozhraní
+            interface = choose_interface()
+            if interface == 'a':
+                from games.bulls_and_cows import play_bulls_and_cows
+                play_bulls_and_cows()
+            elif interface == 'b':
+                from games.gui.bulls_and_cows_gui import play_bulls_and_cows_gui
+                play_bulls_and_cows_gui()
+
         elif choice == "2":
-            from games.tic_tac_toe import play_tic_tac_toe
-            play_tic_tac_toe()
+            # Tic-tac-toe - výběr rozhraní
+            interface = choose_interface()
+            if interface == 'a':
+                from games.tic_tac_toe import play_tic_tac_toe
+                play_tic_tac_toe()
+            elif interface == 'b':
+                from games.gui.tic_tac_toe_gui import play_tic_tac_toe_gui
+                play_tic_tac_toe_gui()
         elif choice == "3":
             from utils.statistics import display_statistics
             display_statistics()
