@@ -109,12 +109,18 @@ class BullsAndCowsGUI:
         self.submit_button = tk.Button(
             input_frame,
             text="Odeslat",
-            font=("Arial", 14),
+            font=("Arial", 14, "bold"),
             command=self.submit_guess,
-            bg="#4CAF50",
+            bg="#2E7D32",
             fg="white",
+            activebackground="#1B5E20",
+            activeforeground="white",
+            highlightbackground="#2E7D32",
             padx=20,
-            pady=5
+            pady=10,
+            relief="raised",
+            bd=2,
+            cursor="hand2"
         )
         self.submit_button.pack(side="left", padx=10)
 

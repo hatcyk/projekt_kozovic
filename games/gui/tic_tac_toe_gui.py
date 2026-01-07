@@ -109,8 +109,11 @@ class TicTacToeGUI:
                 height=2,
                 command=lambda pos=i: self.make_move(pos),
                 bg="#f0f0f0",
+                activebackground="#e0e0e0",
+                highlightbackground="#cccccc",
                 relief="raised",
-                bd=3
+                bd=3,
+                cursor="hand2"
             )
             button.grid(row=row, column=col, padx=5, pady=5)
             self.buttons.append(button)
@@ -119,12 +122,18 @@ class TicTacToeGUI:
         new_game_button = tk.Button(
             self.root,
             text="Nová hra",
-            font=("Arial", 12),
+            font=("Arial", 12, "bold"),
             command=self.start_game,
-            bg="#4CAF50",
+            bg="#2E7D32",
             fg="white",
+            activebackground="#1B5E20",
+            activeforeground="white",
+            highlightbackground="#2E7D32",
             padx=20,
-            pady=8
+            pady=10,
+            relief="raised",
+            bd=2,
+            cursor="hand2"
         )
         new_game_button.pack(pady=15)
 
