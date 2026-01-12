@@ -1,21 +1,5 @@
 # Školní projekty
 
-[![Python](https://### Struktura projektu
-
-```
-├── main.py                     # Hlavní program s menu
-├── ukoly/                      # Balíček s jednotlivými úkoly
-│   ├── __init__.py
-│   ├── plocha_trojuhelniku.py # Výpočet plochy trojúhelníku
-│   ├── hadani_pismene_dne.py  # Hádání prvního písmene dne
-│   ├── prace_se_sety.py       # Práce se sety a ověřování
-│   ├── prace_s_daty.py        # Analýza dat
-│   └── kalkulacka.py          # Kalkulačka a interaktivní programy
-├── README.md
-└── LICENSE
-```/badge/Python-3.6+-blue.svg)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 Repositář obsahující různé školní projekty a domácí úkoly implementované v Pythonu.
 
 ## Škola
@@ -40,6 +24,7 @@ Repositář obsahuje domácí úkoly z předmětu Programování (Python). Jedno
 3. **Úkol 3** - Práce se sety a ověřování hesla
 4. **Úkol 4** - Práce s daty (počítání výskytů, analýza textu)
 5. **Úkol 5** - Kalkulačka a interaktivní programy
+6. **Bulls & Cows** - Hra na hádání čtyřciferného čísla
 
 ### Spuštění
 
@@ -52,14 +37,15 @@ Program zobrazí interaktivní menu s výběrem úkolů.
 ### Struktura projektu
 
 ```
-├── main.py                # Hlavní program s menu
-├── ukoly/                 # Balíček s jednotlivými úkoly
+├── main.py                     # Hlavní program s menu
+├── ukoly/                      # Balíček s jednotlivými úkoly
 │   ├── __init__.py
-│   ├── ukol_01.py        # Plocha trojúhelníku
-│   ├── ukol_02.py        # Hádání písmene dne
-│   ├── ukol_03.py        # Práce se sety
-│   ├── ukol_04.py        # Analýza dat
-│   └── ukol_05.py        # Kalkulačka
+│   ├── plocha_trojuhelniku.py # Výpočet plochy trojúhelníku
+│   ├── hadani_pismene_dne.py  # Hádání prvního písmene dne
+│   ├── prace_se_sety.py       # Práce se sety a ověřování
+│   ├── prace_s_daty.py        # Analýza dat
+│   ├── kalkulacka.py          # Kalkulačka a interaktivní programy
+│   └── bulls_and_cows.py      # Bulls & Cows hra
 ├── README.md
 └── LICENSE
 ```
