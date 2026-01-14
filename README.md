@@ -1,4 +1,4 @@
-# Školní projekty
+# Školní projekty - NEDOKONČENO WIP
 
 Repositář obsahující různé školní projekty a domácí úkoly implementované v Pythonu.
 
