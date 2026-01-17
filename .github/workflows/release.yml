@@ -113,18 +113,10 @@ jobs:
             motolske_projekty-macos/motolske_projekty-macos.zip
             motolske_projekty-linux/motolske_projekty-linux.tar.gz
           body: |
-            # 🎓 Domácí úkoly z Pythonu ${{ github.ref_name }}
+            # Domácí úkoly z Pythonu ${{ github.ref_name }}
 
             První stabilní verze školního projektu s GUI a CLI rozhraním.
-
-            ## ✨ Funkce
-            - ✅ GUI rozhraní (Flet)
-            - ✅ CLI rozhraní
-            - ✅ 7 domácích úkolů
-            - ✅ Hry: Bulls & Cows, Tic-tac-toe
-            - ✅ Automatické testování
-
-            ## 📥 Instalace
+            ## Instalace
 
             ### Windows
             1. Stáhni `motolske_projekty.exe`
