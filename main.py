@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Domácí úkoly z Pythonu - Hlavní menu (GUI launcher)
-# Autor: Štefan Barát
-# Škola: Střední průmyslová škola dopravní
+""" 
+Domácí úkoly z Pythonu - Hlavní menu (GUI launcher)
+Autor: Štefan Barát
+Škola: Střední průmyslová škola dopravní Praha 5
+"""
 
 import sys
 import os
