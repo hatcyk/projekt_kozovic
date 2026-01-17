@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-Automatické testy pro Bulls & Cows
-"""
+# Automatické testy pro Bulls & Cows
 
 import sys
 import os
@@ -27,7 +25,7 @@ from gui.bulls_cows import (
 
 
 def test_generuj_tajne_cislo():
-    """Test generování tajného čísla."""
+    # Test generování tajného čísla.
     vysledky = []
 
     # Test 1: Délka čísla
@@ -56,7 +54,7 @@ def test_generuj_tajne_cislo():
 
 
 def test_validuj_vstup():
-    """Test validace vstupu."""
+    # Test validace vstupu.
     vysledky = []
 
     # Test 1: Platný vstup
@@ -91,7 +89,7 @@ def test_validuj_vstup():
 
 
 def test_vyhodnot_tip():
-    """Test vyhodnocení tipu."""
+    # Test vyhodnocení tipu.
     vysledky = []
 
     tajne = "1234"
@@ -124,7 +122,7 @@ def test_vyhodnot_tip():
 
 
 def test_formatuj_vysledek():
-    """Test formátování výsledku."""
+    # Test formátování výsledku.
     vysledky = []
 
     # Test 1: Jednotné číslo (1 býk, 1 kráva)
@@ -147,7 +145,7 @@ def test_formatuj_vysledek():
 
 
 def test_hodnoceni_vysledku():
-    """Test hodnocení výsledku."""
+    # Test hodnocení výsledku.
     vysledky = []
 
     # Test 1: Výborné (≤4 pokusů)
@@ -170,7 +168,7 @@ def test_hodnoceni_vysledku():
 
 
 def spust_vsechny_testy():
-    """Spustí všechny testy a vrátí výsledky."""
+    # Spustí všechny testy a vrátí výsledky.
     vsechny_vysledky = {}
 
     testy = [

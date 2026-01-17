@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-Automatické testy pro Tic-tac-toe
-"""
+# Automatické testy pro Tic-tac-toe
 
 import sys
 import os
@@ -25,7 +23,7 @@ from gui.tic_tac_toe import (
 
 
 def test_vytvor_hraci_plochu():
-    """Test vytvoření hrací plochy."""
+    # Test vytvoření hrací plochy.
     vysledky = []
 
     # Test 1: Velikost plochy (9 polí)
@@ -45,7 +43,7 @@ def test_vytvor_hraci_plochu():
 
 
 def test_zkontroluj_vitezstvi():
-    """Test kontroly vítězství."""
+    # Test kontroly vítězství.
     vysledky = []
 
     # Test 1: Výhra v horní řadě (1, 2, 3)
@@ -119,7 +117,7 @@ def test_zkontroluj_vitezstvi():
 
 
 def test_je_plocha_plna():
-    """Test kontroly, zda je plocha plná (remíza)."""
+    # Test kontroly, zda je plocha plná (remíza).
     vysledky = []
 
     # Test 1: Prázdná plocha
@@ -157,7 +155,7 @@ def test_je_plocha_plna():
 
 
 def test_remiza_bez_viteze():
-    """Test remízy - plná plocha bez vítěze."""
+    # Test remízy - plná plocha bez vítěze.
     vysledky = []
 
     # Test 1: Remíza - plná plocha bez vítěze
@@ -186,7 +184,7 @@ def test_remiza_bez_viteze():
 
 
 def spust_vsechny_testy():
-    """Spustí všechny testy a vrátí výsledky."""
+    # Spustí všechny testy a vrátí výsledky.
     vsechny_vysledky = {}
 
     testy = [

@@ -1,21 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-GUI modul - Úkol 3: Práce se sety
-"""
+# GUI modul - Úkol 3: Práce se sety
 
 import flet as ft
 
 
 def zobraz_ukol(page: ft.Page, zpet_callback):
-    """
-    Zobrazí GUI pro práci se sety.
-    
-    Args:
-        page: Flet Page objekt
-        zpet_callback: Funkce pro návrat zpět
-    """
+    # Zobrazí GUI pro práci se sety.
+# Args:
+# page: Flet Page objekt
+# zpet_callback: Funkce pro návrat zpět
     page.add(
         ft.Container(height=10),
         ft.Text("Práce se sety", size=24, weight=ft.FontWeight.BOLD),

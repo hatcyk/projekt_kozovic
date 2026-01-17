@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-GUI modul - Automatické testování her
-"""
+# GUI modul - Automatické testování her
 
 import flet as ft
 import sys
@@ -17,16 +15,13 @@ from tests.test_tic_tac_toe import spust_vsechny_testy as testy_tic_tac_toe
 
 
 def zobraz_ukol(page: ft.Page, zpet_callback):
-    """
-    Zobrazí GUI pro výběr automatických testů.
-
-    Args:
-        page: Flet Page objekt
-        zpet_callback: Funkce pro návrat zpět
-    """
+    # Zobrazí GUI pro výběr automatických testů.
+# Args:
+# page: Flet Page objekt
+# zpet_callback: Funkce pro návrat zpět
 
     def spust_testy_hry(hra_nazev):
-        """Spustí testy pro vybranou hru a zobrazí výsledky."""
+        # Spustí testy pro vybranou hru a zobrazí výsledky.
         page.controls.clear()
 
         # Zvětšení okna pro zobrazení výsledků
@@ -177,7 +172,7 @@ def zobraz_ukol(page: ft.Page, zpet_callback):
         page.update()
 
     def zobraz_vyber_testu():
-        """Zobrazí výběr testů."""
+        # Zobrazí výběr testů.
         page.controls.clear()
 
         # Reset velikosti okna

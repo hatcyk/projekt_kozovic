@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-Úkol 2: Hádání prvního písmene dne v týdnu
-Autor: Štefan Barát
-"""
+# Úkol 2: Hádání prvního písmene dne v týdnu
+# Autor: Štefan Barát
 
 
 def hadani_pismene_dne():
-    """Hádá první písmeno vybraného dne v týdnu."""
+    # Hádá první písmeno vybraného dne v týdnu.
     tyden = ('pondělí', 'úterý', 'středa', 'čtvrtek', 'pátek', 'sobota', 'neděle')
     
     print("\n=== HÁDÁNÍ PRVNÍHO PÍSMENE DNE ===")

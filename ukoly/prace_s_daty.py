@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-Úkol 4: Práce s daty - počítání výskytů a zpracování textu
-Autor: Štefan Barát
-"""
+# Úkol 4: Práce s daty - počítání výskytů a zpracování textu
+# Autor: Štefan Barát
 
 
 def pocitani_vyskytu():
-    """Počítá výskyty prvků v seznamu a zobrazuje jejich frekvenci."""
+    # Počítá výskyty prvků v seznamu a zobrazuje jejich frekvenci.
     print("\n=== POČÍTÁNÍ VÝSKYTŮ V SEZNAMU ===")
     
     sequence = [1, 21, 5, 3, 5, 8, 321, 1, 2, 2, 32, 6, 9, 1, 4, 6, 3, 1, 2]
@@ -28,7 +26,7 @@ def pocitani_vyskytu():
 
 
 def pocitani_samohlasek():
-    """Počítá samohlásky a souhlásky v textu."""
+    # Počítá samohlásky a souhlásky v textu.
     print("\n=== POČÍTÁNÍ SAMOHLÁSEK A SOUHLÁSEK ===")
     
     veta = 'Zvuk řeči je produkován poměrně otevřenou konfigurací vokálního traktu'
@@ -51,7 +49,7 @@ def pocitani_samohlasek():
 
 
 def main():
-    """Menu pro výběr úkolu."""
+    # Menu pro výběr úkolu.
     while True:
         print("\n" + "="*50)
         print("ÚKOL 4: PRÁCE S DATY")

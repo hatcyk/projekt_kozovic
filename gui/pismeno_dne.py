@@ -1,27 +1,22 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-GUI modul - Úkol 2: Hádání prvního písmene dne
-"""
+# GUI modul - Úkol 2: Hádání prvního písmene dne
 
 import flet as ft
 import datetime
 
 
 def zobraz_ukol(page: ft.Page, zpet_callback):
-    """
-    Zobrazí GUI pro hádání prvního písmene dne.
-    
-    Args:
-        page: Flet Page objekt
-        zpet_callback: Funkce pro návrat zpět
-    """
+    # Zobrazí GUI pro hádání prvního písmene dne.
+# Args:
+# page: Flet Page objekt
+# zpet_callback: Funkce pro návrat zpět
     vysledek = ft.Text("Zkus uhodnout první písmeno dnešního dne!", size=16)
     pismeno_input = ft.TextField(label="Zadej písmeno", width=200, max_length=1)
     
     def kontrola(e):
-        """Kontrola správnosti hádu."""
+        # Kontrola správnosti hádu.
         dny = ["pondělí", "úterý", "středa", "čtvrtek", "pátek", "sobota", "neděle"]
         dnesni_den = dny[datetime.datetime.now().weekday()]
         prvni_pismeno = dnesni_den[0].lower()

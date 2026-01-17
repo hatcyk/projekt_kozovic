@@ -1,21 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-GUI modul - Úkol 4: Práce s daty
-"""
+# GUI modul - Úkol 4: Práce s daty
 
 import flet as ft
 
 
 def zobraz_ukol(page: ft.Page, zpet_callback):
-    """
-    Zobrazí GUI pro práci s daty.
-    
-    Args:
-        page: Flet Page objekt
-        zpet_callback: Funkce pro návrat zpět
-    """
+    # Zobrazí GUI pro práci s daty.
+# Args:
+# page: Flet Page objekt
+# zpet_callback: Funkce pro návrat zpět
     page.add(
         ft.Container(height=10),
         ft.Text("Práce s daty", size=24, weight=ft.FontWeight.BOLD),

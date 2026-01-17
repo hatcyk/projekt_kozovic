@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-Domácí úkoly z Pythonu - Hlavní menu (GUI launcher)
-Autor: Štefan Barát
-Škola: Střední průmyslová škola dopravní
-"""
+# Domácí úkoly z Pythonu - Hlavní menu (GUI launcher)
+# Autor: Štefan Barát
+# Škola: Střední průmyslová škola dopravní
 
 import sys
 import os
@@ -32,7 +30,7 @@ from gui import automaticke_testy
 
 
 def main():
-    """Spuštění programu - zobrazí GUI volbu."""
+    # Spuštění programu - zobrazí GUI volbu.
     
     # Vytvoření Flet aplikace
     def gui_app(page: ft.Page):
@@ -46,7 +44,7 @@ def main():
         terminal_process = None
         
         def window_event_handler(e):
-            """Zachytí event zavření okna a ukončí terminál."""
+            # Zachytí event zavření okna a ukončí terminál.
             if e.data == "close":
                 # Ukončí CLI terminál pokud běží
                 if terminal_process is not None:
@@ -61,7 +59,7 @@ def main():
         page.window.on_event = window_event_handler
         
         def spustit_cli(e):
-            """Otevře CLI rozhraní v novém terminálu."""
+            # Otevře CLI rozhraní v novém terminálu.
             nonlocal terminal_process
             
             # Pokud je terminál už otevřený, jen zobrazí zprávu
@@ -111,7 +109,7 @@ def main():
             page.update()
         
         def obnovit_menu():
-            """Obnoví hlavní menu."""
+            # Obnoví hlavní menu.
             page.window.width = 700
             page.window.height = 350
             page.controls.clear()
@@ -135,7 +133,7 @@ def main():
             page.update()
         
         def spustit_testy(e):
-            """Spustí automatické testování."""
+            # Spustí automatické testování.
             page.controls.clear()
 
             # Zvětšení okna pro testy
@@ -147,7 +145,7 @@ def main():
             automaticke_testy.zobraz_ukol(page, obnovit_menu)
 
         def spustit_gui(e):
-            """Spustí GUI rozhraní."""
+            # Spustí GUI rozhraní.
             page.controls.clear()
             
             # Zvětšení okna pro GUI menu
@@ -156,7 +154,7 @@ def main():
             page.update()
             
             def zpet_do_menu(e):
-                """Vrátí se zpět do hlavního menu."""
+                # Vrátí se zpět do hlavního menu.
                 # Vrácení původní velikosti okna
                 page.window.width = 700
                 page.window.height = 350
@@ -181,7 +179,7 @@ def main():
                 page.update()
             
             def spustit_ukol_gui(ukol_cislo):
-                """Spustí konkrétní úkol v GUI."""
+                # Spustí konkrétní úkol v GUI.
                 page.controls.clear()
                 
                 if ukol_cislo == 1:
@@ -202,7 +200,7 @@ def main():
                 page.update()
             
             def zpet_do_gui_menu():
-                """Vrátí se do GUI menu úkolů."""
+                # Vrátí se do GUI menu úkolů.
                 page.controls.clear()
                 page.add(
                     ft.Container(height=10),
@@ -226,7 +224,7 @@ def main():
             zpet_do_gui_menu()
         
         async def ukoncit(e):
-            """Ukončí aplikaci - zavře okno."""
+            # Ukončí aplikaci - zavře okno.
             # Zobrazení loading obrazovky
             page.controls.clear()
             page.add(

@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-Úkol 5: Kalkulačka, výběr ovoce a slova se čtyřmi znaky
-Autor: Štefan Barát
-"""
+# Úkol 5: Kalkulačka, výběr ovoce a slova se čtyřmi znaky
+# Autor: Štefan Barát
 
 
 def kalkulacka():
-    """Jednoduchá kalkulačka pro základní operace."""
+    # Jednoduchá kalkulačka pro základní operace.
     print("\n=== KALKULAČKA ===")
     while True:
         print("\nOperace: +, -, *, /")
@@ -46,7 +44,7 @@ def kalkulacka():
 
 
 def vyber_ovoce():
-    """Umožňuje vybrat ovoce z dostupné nabídky."""
+    # Umožňuje vybrat ovoce z dostupné nabídky.
     print("\n=== VÝBĚR OVOCE ===")
     ovoce = ["jablko", "banán", "citron", "pomeranč"]
     
@@ -63,7 +61,7 @@ def vyber_ovoce():
 
 
 def slova_ctyrznaky():
-    """Sbírá slova se čtyřmi znaky, maximálně 3 slova."""
+    # Sbírá slova se čtyřmi znaky, maximálně 3 slova.
     print("\n=== SBÍRÁNÍ SLOV SE ČTYŘMI ZNAKY ===")
     print("Zadej 3 slova dlouhá přesně 4 znaky.")
     
@@ -87,7 +85,7 @@ def slova_ctyrznaky():
 
 
 def main():
-    """Hlavní menu pro výběr úkolu."""
+    # Hlavní menu pro výběr úkolu.
     while True:
         print("\n" + "="*50)
         print("ÚKOL 5: INTERAKTIVNÍ PROGRAMY")

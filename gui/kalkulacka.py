@@ -1,21 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-GUI modul - Úkol 5: Kalkulačka
-"""
+# GUI modul - Úkol 5: Kalkulačka
 
 import flet as ft
 
 
 def zobraz_ukol(page: ft.Page, zpet_callback):
-    """
-    Zobrazí GUI pro kalkulačku.
-    
-    Args:
-        page: Flet Page objekt
-        zpet_callback: Funkce pro návrat zpět
-    """
+    # Zobrazí GUI pro kalkulačku.
+# Args:
+# page: Flet Page objekt
+# zpet_callback: Funkce pro návrat zpět
     cislo1 = ft.TextField(
         label="Číslo 1", 
         width=200, 
@@ -39,7 +34,7 @@ def zobraz_ukol(page: ft.Page, zpet_callback):
     vysledek = ft.Text("", size=20, weight=ft.FontWeight.BOLD)
     
     def vypocitej(e):
-        """Provede výpočet podle zvolené operace."""
+        # Provede výpočet podle zvolené operace.
         try:
             a = float(cislo1.value)
             b = float(cislo2.value)

@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-GUI modul - Úkol 6: Bulls & Cows
-"""
+# GUI modul - Úkol 6: Bulls & Cows
 
 import flet as ft
 import random
@@ -11,7 +9,7 @@ import time
 
 
 def generuj_tajne_cislo():
-    """Vygeneruje náhodné 4-místné číslo s unikátními číslicemi (nezačíná 0)."""
+    # Vygeneruje náhodné 4-místné číslo s unikátními číslicemi (nezačíná 0).
     cislice = list(range(10))
     
     # První číslo nesmí být 0
@@ -25,7 +23,7 @@ def generuj_tajne_cislo():
 
 
 def validuj_vstup(tip):
-    """Zkontroluje, jestli je zadaný tip platný."""
+    # Zkontroluje, jestli je zadaný tip platný.
     # Kontrola délky
     if len(tip) != 4:
         return False, "Zadej přesně 4 číslice!"
@@ -46,7 +44,7 @@ def validuj_vstup(tip):
 
 
 def vyhodnot_tip(tajne_cislo, tip):
-    """Vyhodnotí tip a vrátí počet bulls a cows."""
+    # Vyhodnotí tip a vrátí počet bulls a cows.
     bulls = 0
     cows = 0
 
@@ -60,7 +58,7 @@ def vyhodnot_tip(tajne_cislo, tip):
 
 
 def vytvor_vizualni_feedback(tajne_cislo, tip):
-    """Vytvoří vizuální feedback pro každou číslici (jako Wordle)."""
+    # Vytvoří vizuální feedback pro každou číslici (jako Wordle).
     feedback = []
 
     for i in range(4):
@@ -92,7 +90,7 @@ def vytvor_vizualni_feedback(tajne_cislo, tip):
 
 
 def formatuj_vysledek(bulls, cows):
-    """Naformátuje výsledek s gramaticky správným tvarem."""
+    # Naformátuje výsledek s gramaticky správným tvarem.
     # České gramatické tvary
     if bulls == 1:
         bull_text = "býk"
@@ -112,7 +110,7 @@ def formatuj_vysledek(bulls, cows):
 
 
 def hodnoceni_vysledku(pokusy):
-    """Vrátí hodnocení na základě počtu pokusů."""
+    # Vrátí hodnocení na základě počtu pokusů.
     if pokusy <= 4:
         return "úžasné"
     elif pokusy <= 7:
@@ -124,13 +122,10 @@ def hodnoceni_vysledku(pokusy):
 
 
 def zobraz_ukol(page: ft.Page, zpet_callback):
-    """
-    Zobrazí GUI pro hru Bulls & Cows.
-    
-    Args:
-        page: Flet Page objekt
-        zpet_callback: Funkce pro návrat zpět
-    """
+    # Zobrazí GUI pro hru Bulls & Cows.
+# Args:
+# page: Flet Page objekt
+# zpet_callback: Funkce pro návrat zpět
     # Herní stav
     tajne_cislo = generuj_tajne_cislo()
     pokusy = 0
@@ -166,14 +161,14 @@ def zobraz_ukol(page: ft.Page, zpet_callback):
     )
     
     def aktualizuj_cas():
-        """Aktualizuje zobrazený čas."""
+        # Aktualizuje zobrazený čas.
         if stav_text.value != "Gratulujeme! Uhodl jsi číslo! 🎉":
             cas = int(time.time() - start_cas)
             cas_text.value = f"Čas: {cas}s"
             page.update()
     
     def nova_hra(e):
-        """Reset hry."""
+        # Reset hry.
         nonlocal tajne_cislo, pokusy, start_cas, historie
         tajne_cislo = generuj_tajne_cislo()
         pokusy = 0
@@ -191,7 +186,7 @@ def zobraz_ukol(page: ft.Page, zpet_callback):
         page.update()
     
     def over_tip(e):
-        """Ověří tip uživatele."""
+        # Ověří tip uživatele.
         nonlocal pokusy
         
         tip = tip_input.value.strip()

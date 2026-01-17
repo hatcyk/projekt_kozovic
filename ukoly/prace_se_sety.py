@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-Úkol 3: Práce se sety - rozdíl, sjednocení a ověřování hesla
-Autor: Štefan Barát
-"""
+# Úkol 3: Práce se sety - rozdíl, sjednocení a ověřování hesla
+# Autor: Štefan Barát
 
 
 def rozdil_setu():
-    """Vypočítá rozdíl mezi dvěma sety."""
+    # Vypočítá rozdíl mezi dvěma sety.
     print("\n=== ÚLOHA 1: ROZDÍL SETŮ ===")
     
     numbers_1 = {1, 2, 3, 4}
@@ -22,7 +20,7 @@ def rozdil_setu():
 
 
 def sjednoceni_setu():
-    """Sjednocuje dva sety."""
+    # Sjednocuje dva sety.
     print("\n=== ÚLOHA 2: SJEDNOCENÍ SETŮ ===")
     
     numbers_1 = {1, 2, 3, 4}
@@ -36,7 +34,7 @@ def sjednoceni_setu():
 
 
 def overeni_hesla():
-    """Ověřuje přihlašovací údaje."""
+    # Ověřuje přihlašovací údaje.
     print("\n=== ÚLOHA 3: OVĚŘENÍ HESLA ===")
     
     spravne_heslo = "tajne123"
@@ -57,7 +55,7 @@ def overeni_hesla():
 
 
 def main():
-    """Spustí všechny úlohy."""
+    # Spustí všechny úlohy.
     rozdil_setu()
     sjednoceni_setu()
     overeni_hesla()

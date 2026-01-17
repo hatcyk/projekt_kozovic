@@ -1,19 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-Bulls & Cows - Hra na hádání čtyřciferného čísla
-Autor: Štefan Barát
-Email: barat70671@mot.sps-dopravni.cz
-Discord: hatsukooo
-"""
+# Bulls & Cows - Hra na hádání čtyřciferného čísla
+# Autor: Štefan Barát
+# Email: barat70671@mot.sps-dopravni.cz
+# Discord: hatsukooo
 
 import random
 import time
 
 
 def generuj_tajne_cislo():
-    """Vygeneruje náhodné 4-místné číslo s unikátními číslicemi (nezačíná 0)."""
+    # Vygeneruje náhodné 4-místné číslo s unikátními číslicemi (nezačíná 0).
     cislice = list(range(10))
     
     # První číslo nesmí být 0
@@ -27,7 +25,7 @@ def generuj_tajne_cislo():
 
 
 def validuj_vstup(tip):
-    """Zkontroluje, jestli je zadaný tip platný."""
+    # Zkontroluje, jestli je zadaný tip platný.
     # Kontrola délky
     if len(tip) != 4:
         return False, "Zadej přesně 4 číslice!"
@@ -48,7 +46,7 @@ def validuj_vstup(tip):
 
 
 def vyhodnot_tip(tajne_cislo, tip):
-    """Vyhodnotí tip a vrátí počet bulls a cows."""
+    # Vyhodnotí tip a vrátí počet bulls a cows.
     bulls = 0
     cows = 0
     
@@ -62,7 +60,7 @@ def vyhodnot_tip(tajne_cislo, tip):
 
 
 def formatuj_vysledek(bulls, cows):
-    """Naformátuje výsledek s gramaticky správným tvarem."""
+    # Naformátuje výsledek s gramaticky správným tvarem.
     # České gramatické tvary
     if bulls == 1:
         bull_text = "býk"
@@ -82,7 +80,7 @@ def formatuj_vysledek(bulls, cows):
 
 
 def hodnoceni_vysledku(pokusy):
-    """Vrátí hodnocení na základě počtu pokusů."""
+    # Vrátí hodnocení na základě počtu pokusů.
     if pokusy <= 4:
         return "úžasné"
     elif pokusy <= 7:
@@ -94,7 +92,7 @@ def hodnoceni_vysledku(pokusy):
 
 
 def hraj_bulls_and_cows():
-    """Hlavní herní smyčka."""
+    # Hlavní herní smyčka.
     print("\nAhoj!")
     print("-" * 47)
     print("Vygeneroval jsem náhodné 4-místné číslo.")
@@ -139,7 +137,7 @@ def hraj_bulls_and_cows():
 
 
 def main():
-    """Hlavní funkce s možností opakování hry."""
+    # Hlavní funkce s možností opakování hry.
     while True:
         hraj_bulls_and_cows()
         

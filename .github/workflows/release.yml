@@ -23,7 +23,7 @@ jobs:
 
       - name: Build Windows executable
         run: |
-          pyinstaller --name="motolske_projekty" --windowed --onefile --add-data="ukoly;ukoly" --add-data="gui;gui" --add-data="tests;tests" --add-data="cli_menu.py;." --collect-all=flet --exclude-module=flet.testing --exclude-module=numpy --noconfirm main.py
+          pyinstaller --name="motolske_projekty" --windowed --onefile --add-data="ukoly;ukoly" --add-data="gui;gui" --add-data="cli_menu.py;." --collect-all=flet --exclude-module=flet.testing --exclude-module=numpy --noconfirm main.py
 
       - name: Upload Windows artifact
         uses: actions/upload-artifact@v3
@@ -48,7 +48,7 @@ jobs:
 
       - name: Build macOS app
         run: |
-          pyinstaller --name="motolske_projekty" --windowed --onedir --add-data="ukoly:ukoly" --add-data="gui:gui" --add-data="tests:tests" --add-data="cli_menu.py:." --collect-all=flet --exclude-module=flet.testing --exclude-module=numpy --noconfirm main.py
+          pyinstaller --name="motolske_projekty" --windowed --onedir --add-data="ukoly:ukoly" --add-data="gui:gui" --add-data="cli_menu.py:." --collect-all=flet --exclude-module=flet.testing --exclude-module=numpy --noconfirm main.py
 
       - name: Create zip
         run: |
@@ -83,7 +83,7 @@ jobs:
 
       - name: Build Linux binary
         run: |
-          pyinstaller --name="motolske_projekty" --windowed --onefile --add-data="ukoly:ukoly" --add-data="gui:gui" --add-data="tests:tests" --add-data="cli_menu.py:." --collect-all=flet --exclude-module=flet.testing --exclude-module=numpy --noconfirm main.py
+          pyinstaller --name="motolske_projekty" --windowed --onefile --add-data="ukoly:ukoly" --add-data="gui:gui" --add-data="cli_menu.py:." --collect-all=flet --exclude-module=flet.testing --exclude-module=numpy --noconfirm main.py
 
       - name: Create tar.gz
         run: |

@@ -1,3 +1,1 @@
-"""
-GUI moduly pro jednotlivé úkoly.
-"""
+# GUI moduly pro jednotlivé úkoly.

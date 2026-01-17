@@ -1,21 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-GUI modul - Úkol 1: Výpočet plochy trojúhelníku
-"""
+# GUI modul - Úkol 1: Výpočet plochy trojúhelníku
 
 import flet as ft
 
 
 def zobraz_ukol(page: ft.Page, zpet_callback):
-    """
-    Zobrazí GUI pro výpočet plochy trojúhelníku.
-    
-    Args:
-        page: Flet Page objekt
-        zpet_callback: Funkce pro návrat zpět
-    """
+    # Zobrazí GUI pro výpočet plochy trojúhelníku.
+# Args:
+# page: Flet Page objekt
+# zpet_callback: Funkce pro návrat zpět
     strana_a = ft.TextField(
         label="Strana a", 
         width=200, 
@@ -34,7 +29,7 @@ def zobraz_ukol(page: ft.Page, zpet_callback):
     vysledek = ft.Text("", size=16, color=ft.Colors.GREEN)
     
     def vypocitej(e):
-        """Výpočet plochy trojúhelníku."""
+        # Výpočet plochy trojúhelníku.
         try:
             a = float(strana_a.value)
             b = float(strana_b.value)

@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-Testy pro domácí úkoly
-"""
+# Testy pro domácí úkoly

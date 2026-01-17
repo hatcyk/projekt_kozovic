@@ -1,20 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-GUI modul - Úkol 7: Tic-tac-toe (Piškvorky)
-"""
+# GUI modul - Úkol 7: Tic-tac-toe (Piškvorky)
 
 import flet as ft
 
 
 def vytvor_hraci_plochu():
-    """Vytvoří prázdnou hrací plochu 3x3."""
+    # Vytvoří prázdnou hrací plochu 3x3.
     return {i: ' ' for i in range(1, 10)}
 
 
 def zkontroluj_vitezstvi(plocha, hrac):
-    """Zkontroluje, jestli hráč vyhrál. Vrátí (vyhrál, výherní kombinace)."""
+    # Zkontroluje, jestli hráč vyhrál. Vrátí (vyhrál, výherní kombinace).
     # Všechny možné výherní kombinace
     vyherni_kombinace = [
         [1, 2, 3],  # horní řada
@@ -34,18 +32,15 @@ def zkontroluj_vitezstvi(plocha, hrac):
 
 
 def je_plocha_plna(plocha):
-    """Zkontroluje, jestli je plocha plná (remíza)."""
+    # Zkontroluje, jestli je plocha plná (remíza).
     return all(plocha[i] != ' ' for i in range(1, 10))
 
 
 def zobraz_ukol(page: ft.Page, zpet_callback):
-    """
-    Zobrazí GUI pro hru Tic-tac-toe.
-    
-    Args:
-        page: Flet Page objekt
-        zpet_callback: Funkce pro návrat zpět
-    """
+    # Zobrazí GUI pro hru Tic-tac-toe.
+# Args:
+# page: Flet Page objekt
+# zpet_callback: Funkce pro návrat zpět
     # Herní stav
     plocha = vytvor_hraci_plochu()
     aktualni_hrac = 'O'
@@ -64,7 +59,7 @@ def zobraz_ukol(page: ft.Page, zpet_callback):
     tlacitka = {}
     
     def klik_na_pole(pozice):
-        """Handler pro kliknutí na pole."""
+        # Handler pro kliknutí na pole.
         nonlocal aktualni_hrac, hra_aktivni, vyherni_pozice
         
         if not hra_aktivni or plocha[pozice] != ' ':
@@ -107,7 +102,7 @@ def zobraz_ukol(page: ft.Page, zpet_callback):
         page.update()
     
     def nova_hra(e):
-        """Reset hry."""
+        # Reset hry.
         nonlocal plocha, aktualni_hrac, hra_aktivni, vyherni_pozice
         
         plocha = vytvor_hraci_plochu()
@@ -127,7 +122,7 @@ def zobraz_ukol(page: ft.Page, zpet_callback):
     
     # Vytvoření 3x3 gridu tlačítek
     def vytvor_tlacitko(pozice):
-        """Vytvoří tlačítko pro pozici."""
+        # Vytvoří tlačítko pro pozici.
         text_control = ft.Text("", size=32, weight=ft.FontWeight.BOLD)
 
         btn = ft.ElevatedButton(

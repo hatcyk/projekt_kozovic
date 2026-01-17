@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-CLI rozhraní pro domácí úkoly
-"""
+# CLI rozhraní pro domácí úkoly
 
 import os
 import sys
@@ -11,12 +9,12 @@ from ukoly import plocha_trojuhelniku, hadani_pismene_dne, prace_se_sety, prace_
 
 
 def vycisti_terminal():
-    """Vyčistí terminál."""
+    # Vyčistí terminál.
     os.system('cls' if sys.platform == 'win32' else 'clear')
 
 
 def vypis_header():
-    """Zobrazí úvodní zprávu."""
+    # Zobrazí úvodní zprávu.
     print("\n" + "="*60)
     print(" "*15 + "DOMÁCÍ ÚKOLY Z PYTHONU")
     print("="*60)
@@ -26,7 +24,7 @@ def vypis_header():
 
 
 def hlavni_menu():
-    """Hlavní menu pro výběr úkolu."""
+    # Hlavní menu pro výběr úkolu.
     while True:
         print("\n" + "="*60)
         print("SEZNAM ÚKOLŮ")

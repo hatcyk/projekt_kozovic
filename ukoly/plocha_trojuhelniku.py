@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-Úkol 1: Výpočet plochy trojúhelníku
-Autor: Štefan Barát
-"""
+# Úkol 1: Výpočet plochy trojúhelníku
+# Autor: Štefan Barát
 
 
 def plocha_trojuhelniku():
-    """Vypočítá plochu trojúhelníku na základě základny a výšky."""
+    # Vypočítá plochu trojúhelníku na základě základny a výšky.
     print("\n=== VÝPOČET PLOCHY TROJÚHELNÍKU ===")
     try:
         zakladna = float(input("Zadej základnu trojúhelníku: "))

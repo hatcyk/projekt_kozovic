@@ -1,4 +1,2 @@
-"""
-Balíček s domácími úkoly z Pythonu
-Autor: Štefan Barát
-"""
+# Balíček s domácími úkoly z Pythonu
+# Autor: Štefan Barát
