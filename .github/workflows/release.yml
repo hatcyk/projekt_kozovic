@@ -1,0 +1,144 @@
+name: Build Release
+
+on:
+  push:
+    tags:
+      - 'v*'  # Spustí se při pushu tagu jako v1.0.0
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build Windows executable
+        run: |
+          pyinstaller --name="motolske_projekty" --windowed --onefile --add-data="ukoly;ukoly" --add-data="gui;gui" --add-data="tests;tests" --add-data="cli_menu.py;." --collect-all=flet --exclude-module=flet.testing --exclude-module=numpy --noconfirm main.py
+
+      - name: Upload Windows artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: motolske_projekty-windows
+          path: dist/motolske_projekty.exe
+
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build macOS app
+        run: |
+          pyinstaller --name="motolske_projekty" --windowed --onedir --add-data="ukoly:ukoly" --add-data="gui:gui" --add-data="tests:tests" --add-data="cli_menu.py:." --collect-all=flet --exclude-module=flet.testing --exclude-module=numpy --noconfirm main.py
+
+      - name: Create zip
+        run: |
+          cd dist
+          zip -r ../motolske_projekty-macos.zip motolske_projekty.app
+
+      - name: Upload macOS artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: motolske_projekty-macos
+          path: motolske_projekty-macos.zip
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libmpv2
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build Linux binary
+        run: |
+          pyinstaller --name="motolske_projekty" --windowed --onefile --add-data="ukoly:ukoly" --add-data="gui:gui" --add-data="tests:tests" --add-data="cli_menu.py:." --collect-all=flet --exclude-module=flet.testing --exclude-module=numpy --noconfirm main.py
+
+      - name: Create tar.gz
+        run: |
+          cd dist
+          tar -czf ../motolske_projekty-linux.tar.gz motolske_projekty
+
+      - name: Upload Linux artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: motolske_projekty-linux
+          path: motolske_projekty-linux.tar.gz
+
+  create-release:
+    needs: [build-windows, build-macos, build-linux]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v3
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            motolske_projekty-windows/motolske_projekty.exe
+            motolske_projekty-macos/motolske_projekty-macos.zip
+            motolske_projekty-linux/motolske_projekty-linux.tar.gz
+          body: |
+            # 🎓 Domácí úkoly z Pythonu ${{ github.ref_name }}
+
+            První stabilní verze školního projektu s GUI a CLI rozhraním.
+
+            ## ✨ Funkce
+            - ✅ GUI rozhraní (Flet)
+            - ✅ CLI rozhraní
+            - ✅ 7 domácích úkolů
+            - ✅ Hry: Bulls & Cows, Tic-tac-toe
+            - ✅ Automatické testování
+
+            ## 📥 Instalace
+
+            ### Windows
+            1. Stáhni `motolske_projekty.exe`
+            2. Spusť
+
+            ### macOS
+            1. Stáhni `motolske_projekty-macos.zip`
+            2. Rozbal a přesuň do Applications
+            3. Spusť aplikaci
+
+            ### Linux
+            1. Stáhni `motolske_projekty-linux.tar.gz`
+            2. Rozbal: `tar -xzf motolske_projekty-linux.tar.gz`
+            3. Nainstaluj závislost: `sudo apt install libmpv2`
+            4. Spusť: `./motolske_projekty`
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
